@@ -1,3 +1,4 @@
+# Most Subscribed YouTube Music Channels
 This Python bot checks the most subscribed music artist channels on YouTube and shares updates about it on Twitter.
 It posts a weekly report of the top chart on Monday. Every day it posts updates such as: an artist's subscribers increased, an artist overtakes another artist and more.
 
