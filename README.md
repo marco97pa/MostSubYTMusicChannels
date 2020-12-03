@@ -9,4 +9,12 @@ It runs (almost) 24/7 on a Raspberry Pi and it also updates the data on this rep
 
 The script is the **main.py** and data are stored in [channels.csv](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/channels.csv)
 
-Remember to add your API keys and *sudo pip3 install tweepy* before running the script
+## Prerequistite
+1. Get your API Keys from [Youtube](https://developers.google.com/youtube/v3/getting-started) and [Twitter](https://developer.twitter.com/en/docs)
+2. Paste them in the **main.py** file
+3. Run `sudo pip3 install tweepy`
+
+## How to use
+Run **main.py** to check for new updates on the subscribers of the channels listed in channels.csv and eventually post on Twitter if there is any change
+
+BONUS: If you run **main.py** with the **-report** flag, it will print (and tweet) a chart of the most subscribed channels
