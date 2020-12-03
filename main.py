@@ -49,8 +49,7 @@ def update_subscribers(response, channels):
 
 def subs_notify_change(channel):
     twitter_post("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]))
-    log_message("{} reached {} Mln subs".format(channel["name"], int(channel["subs"])/1000000))
-
+    
 def check_if_ordered(channels):
     for i in range(len(channels) - 1):
         if channels[i]["subs"] < channels[i + 1]["subs"]:
@@ -76,10 +75,6 @@ def twitter_post(message):
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
     api.update_status(message)
-
-def log_message(message):
-    with open("message.txt", "a") as myfile:
-        myfile.write(message+"\n")
 
 channels = load_channels()
 response = get_subscribers(channels)
