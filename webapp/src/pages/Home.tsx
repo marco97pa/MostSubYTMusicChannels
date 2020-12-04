@@ -31,8 +31,8 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
-        <IonToolbar>
+      <IonHeader color="primary">
+        <IonToolbar color="primary">
           <IonTitle>Most Subscribed YouTube Music Channels</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -40,14 +40,6 @@ const Home: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
 
         <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
