@@ -17,7 +17,7 @@ let i: number = 0;
 const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => { 
   i++;
   return (
-    <IonItem routerLink={`/message/${message.id}`} detail={false}>
+    <IonItem href={`https://www.youtube.com/channel/${message.id}`} detail={false}>
       <IonAvatar slot="start">
         <img src={"https://unavatar.now.sh/twitter/" + message.username}/>
       </IonAvatar>
