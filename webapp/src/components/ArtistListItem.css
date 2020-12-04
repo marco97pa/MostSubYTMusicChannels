@@ -1,0 +1,53 @@
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+ion-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+ion-item h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+ion-item p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 95%;
+}
+
+ion-item .date {
+  float: right;
+  align-items: center;
+  display: flex;
+}
+
+ion-item ion-icon {
+  color: #c9c9ca;
+}
+
+ion-item > ion-note {
+  margin-left: 14px;
+  margin-right: 8px;
+  font-weight: normal;
+  font-size: large;
+  width: 2.2em;
+  text-align: left;
+}
+
+ion-item {
+  margin-right: 14px;
+}
+
+ion-item ion-avatar{
+  margin-right: 14px;
+}
+
+ion-footer ion-title {
+  font-size: 11px;
+  font-weight: normal;
+}
