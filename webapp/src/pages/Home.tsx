@@ -21,6 +21,7 @@ import {
   IonCol,
   useIonViewWillEnter
 } from '@ionic/react';
+import { logoTwitter, logoGithub, walletOutline, heart } from 'ionicons/icons';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -63,7 +64,7 @@ const Home: React.FC = () => {
 
               <IonCard>
                 <IonItem>
-                  <IonIcon icon="./icon/icon.png" slot="start" />
+                  <IonIcon icon={logoTwitter} slot="start" />
                   <IonLabel>Keep updated!</IonLabel>
                   <IonButton fill="outline" slot="end" href="https://twitter.com/mostSubYTMusic?s=09">Follow</IonButton>
                 </IonItem>
@@ -77,7 +78,7 @@ const Home: React.FC = () => {
 
             <IonCard>
                 <IonItem>
-                  <IonIcon icon="./icon/icon.png" slot="start" />
+                  <IonIcon icon={logoGithub} slot="start" />
                   <IonLabel>Open source</IonLabel>
                   <IonButton fill="outline" slot="end" href="https://github.com/marco97pa/MostSubYTMusicChannels">GitHub</IonButton>
                 </IonItem>
@@ -92,7 +93,7 @@ const Home: React.FC = () => {
 
             <IonCard>
                 <IonItem>
-                  <IonIcon icon="./icon/icon.png" slot="start" />
+                  <IonIcon icon={walletOutline} slot="start"/>
                   <IonLabel>Contribute!</IonLabel>
                   <IonButton fill="outline" slot="end" href="https://paypal.me/marco97pa">Donate</IonButton>
                 </IonItem>
