@@ -1,6 +1,6 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "Most Subs YouTube Music",
+  "name": "Most Subscribed YouTube Music Channels",
   "icons": [
     {
       "src": "assets/icon/favicon.png",
@@ -16,6 +16,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "theme_color": "#cd2626",
+  "background_color": "#eb4040"
 }
