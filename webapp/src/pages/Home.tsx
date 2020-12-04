@@ -1,6 +1,6 @@
-import MessageListItem from '../components/MessageListItem';
 import React, { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import MessageListItem from '../components/ArtistListItem';
+import { Artist, getArtists } from '../data/artists';
 import {
   IonContent,
   IonHeader,
@@ -26,11 +26,11 @@ import './Home.css';
 
 const Home: React.FC = () => {
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([]);
 
   useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
+    const arts = getArtists();
+    setArtists(arts);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
         </IonRefresher>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {artists.map(a => <MessageListItem key={a.id} artist={a} />)}
         </IonList>
 
 

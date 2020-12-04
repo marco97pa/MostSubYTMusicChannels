@@ -1,4 +1,4 @@
-export interface Message {
+export interface Artist {
   name: string;
   username: string;
   subs: number;
@@ -8,7 +8,7 @@ export interface Message {
 //Declare variables and constants
 const Papa = require('papaparse')
 const url = "https://raw.githubusercontent.com/marco97pa/MostSubYTMusicChannels/master/channels.csv";
-let messages: Message[];
+let artists: Artist[];
 
 /* getDataFromCSV
  * url: string -> url that points to the CSV file
@@ -26,7 +26,7 @@ function getDataFromCSV(url: string){
       //Remove the last item because it is empty
       results.data.pop(); 
       //Populate data
-      messages = results.data;
+      artists = results.data;
     }
   })
 }
@@ -35,6 +35,6 @@ function getDataFromCSV(url: string){
 getDataFromCSV(url);
 
 //Methods to be called by pages
-export const getMessages = () => messages;
+export const getArtists = () => artists;
 
-export const getMessage = (id: number) => messages.find(m => m.id === id);
+export const getArtist = (id: number) => artists.find(a => a.id === id);
