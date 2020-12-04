@@ -31,11 +31,13 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
+
       <IonHeader color="primary">
         <IonToolbar color="primary">
           <IonTitle>Most Subscribed YouTube Music Channels</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
@@ -44,6 +46,7 @@ const Home: React.FC = () => {
         <IonList>
           {messages.map(m => <MessageListItem key={m.id} message={m} />)}
         </IonList>
+        
       </IonContent>
     </IonPage>
   );
