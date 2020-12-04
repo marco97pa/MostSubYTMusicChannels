@@ -32,11 +32,14 @@ ion-item ion-icon {
 
 ion-item > ion-note {
   margin-left: 14px;
+  margin-right: 8px;
   font-weight: normal;
   font-size: large;
+  width: 2.2em;
+  text-align: left;
 }
 
-ion-item ion-note.md {
+ion-item {
   margin-right: 14px;
 }
 
