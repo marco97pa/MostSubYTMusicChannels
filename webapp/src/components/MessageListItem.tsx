@@ -18,7 +18,10 @@ const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
   i++;
   return (
     <IonItem href={`https://www.youtube.com/channel/${message.id}`} detail={false}>
-      <IonAvatar slot="start">
+      <IonNote slot="start">
+        {i}
+      </IonNote>
+      <IonAvatar>
         <img src={"https://unavatar.now.sh/twitter/" + message.username}/>
       </IonAvatar>
       <IonLabel>
@@ -28,7 +31,6 @@ const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
             <IonNote>{message.subs}</IonNote>
           </span>
         </h2>
-        <h3>{i}</h3>
       </IonLabel>
     </IonItem>
   );

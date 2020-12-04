@@ -30,27 +30,18 @@ ion-item ion-icon {
   color: #c9c9ca;
 }
 
-ion-item ion-note {
-  font-size: 15px;
-  margin-right: 8px;
+ion-item > ion-note {
+  margin-left: 14px;
   font-weight: normal;
+  font-size: large;
 }
 
 ion-item ion-note.md {
   margin-right: 14px;
 }
 
-.dot {
-  display: block;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  align-self: start;
-  margin: 16px 10px 16px 16px;
-}
-
-.dot-unread {
-  background: var(--ion-color-primary);
+ion-item ion-avatar{
+  margin-right: 14px;
 }
 
 ion-footer ion-title {
