@@ -28,7 +28,7 @@ const MessageListItem: React.FC<MessageListItemProps> = ({ message }) => {
         <h2>
           {message.name}
           <span className="date">
-            <IonNote>{message.subs}</IonNote>
+            <IonNote>{(message.subs/1000000).toFixed(1)} Mln</IonNote>
           </span>
         </h2>
       </IonLabel>
