@@ -2,6 +2,7 @@
   "name": "most-subscribed-you-tube-music-channels",
   "version": "0.0.1",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@capacitor/core": "2.4.4",
     "@ionic/pwa-elements": "^3.0.1",
