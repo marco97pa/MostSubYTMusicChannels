@@ -21,7 +21,7 @@ import {
   IonCol,
   useIonViewWillEnter
 } from '@ionic/react';
-import { logoTwitter, logoGithub, walletOutline, heart } from 'ionicons/icons';
+import { logoTwitter, logoGithub, walletOutline } from 'ionicons/icons';
 import './Home.css';
 
 const Home: React.FC = () => {
