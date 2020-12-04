@@ -18,12 +18,12 @@ let i: number = 0;
 const ArtistListItem: React.FC<ArtistListItemProps> = ({ artist }) => { 
   i++;
   return (
-    <IonItem href={`https://www.youtube.com/channel/${artist.id}`} detail={false}>
+    <IonItem href={"https://www.youtube.com/channel/" + artist.id} detail={false}>
       <IonNote slot="start">
         {i}
       </IonNote>
       <IonAvatar>
-        <img src={"https://unavatar.now.sh/twitter/" + artist.username}/>
+        <img src={"https://unavatar.now.sh/twitter/" + artist.username} alt={artist.name}/>
       </IonAvatar>
       <IonLabel>
         <h2>
