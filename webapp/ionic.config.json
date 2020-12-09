@@ -1,0 +1,7 @@
+{
+  "name": "Most Subscribed YouTube Music Channels",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
