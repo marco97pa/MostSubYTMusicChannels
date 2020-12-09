@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/marco97pa/MostSubYTMusicChannels/precache-manifest.39a860d2e0cd034faafb5c34ba1afa66.js"
+  "/marco97pa/MostSubYTMusicChannels/precache-manifest.4ba47f7a17f50dfa30916258d9fb1317.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7ce8ac2db034b15420788d6ea780f122",
+    "revision": "609da504f69ac1eb3727aef0fce5415e",
     "url": "/marco97pa/MostSubYTMusicChannels/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/marco97pa/MostSubYTMusicChannels/static/css/6.3614eac3.chunk.css"
   },
   {
-    "revision": "832267b209319ebe3971",
+    "revision": "3561305c135be6f1de28",
     "url": "/marco97pa/MostSubYTMusicChannels/static/css/main.89c9e354.chunk.css"
   },
   {
@@ -288,8 +288,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/marco97pa/MostSubYTMusicChannels/static/js/9.77753725.chunk.js"
   },
   {
-    "revision": "832267b209319ebe3971",
-    "url": "/marco97pa/MostSubYTMusicChannels/static/js/main.f70177fd.chunk.js"
+    "revision": "3561305c135be6f1de28",
+    "url": "/marco97pa/MostSubYTMusicChannels/static/js/main.bc2036b5.chunk.js"
   },
   {
     "revision": "0c5d2105d42e2ea8e326",
