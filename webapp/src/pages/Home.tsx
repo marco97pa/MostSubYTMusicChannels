@@ -39,6 +39,10 @@ const Home: React.FC = () => {
     }, 3000);
   };
 
+  if(artists == null){
+    window.location.reload();
+  }
+
   return (
     <IonPage id="home-page">
 
@@ -98,7 +102,7 @@ const Home: React.FC = () => {
                   <IonButton fill="outline" slot="end" href="https://paypal.me/marco97pa">Donate</IonButton>
                 </IonItem>
                 <IonCardContent>
-                  This service runs (almost) 24/24h on a Raspberry Pi. It could run way better if I had a proper server.
+                  This service runs (almost) 24/24h, thanks to GitHub Actions. It could run way better if I had a proper server.
                   So if you are happy of this service and you would like to contribute, any donation is really appreciated.
                 </IonCardContent>
               </IonCard>
