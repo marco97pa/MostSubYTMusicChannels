@@ -4,10 +4,10 @@ name: py
 
 on:
   schedule:
-   - cron: "05 * * * *" #runs at 00:00 UTC everyday
+   - cron: "10 * * * *" #runs at 00:00 UTC everyday
 
 jobs:
-  update-channels-stats:
+  build:
     runs-on: ubuntu-latest
 
     steps:
