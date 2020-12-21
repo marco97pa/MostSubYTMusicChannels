@@ -3,3 +3,4 @@ keys.py
 git_sync.sh
 message.txt
 
+webapp/debug.log

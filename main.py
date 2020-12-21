@@ -7,8 +7,8 @@ import datetime
 from operator import itemgetter
 import tweepy
 import os
-from keys import youtube_key
-from keys import twitter_keys
+#from keys import youtube_key
+#from keys import twitter_keys
 
 #Get API key for YouTube
 youtube_api_key = os.environ.get('YOUTUBE_API_KEY')
