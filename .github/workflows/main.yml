@@ -1,6 +1,6 @@
 # This workflow updates the channels.csv file to the latest stats
 
-name: Update stats
+name: Check updated stats
 
 on:
   schedule:
