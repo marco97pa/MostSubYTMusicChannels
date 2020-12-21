@@ -6,12 +6,18 @@ import json
 import datetime
 from operator import itemgetter
 import tweepy
+import os
 from keys import youtube_key
 from keys import twitter_keys
 
-#Get API keys from external module
-youtube_api_key = youtube_key()
-consumer_key, consumer_secret, access_token, access_token_secret = twitter_keys()
+#Get API key for YouTube
+youtube_api_key = os.environ.get('YOUTUBE_API_KEY')
+
+#Get Twitter API keys
+consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
+consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
+access_token = os.environ.get('TWITTER_ACCESS_KEY')
+access_token_secret = os.environ.get('TWITTER_ACCESS_SECRET')
 
 def load_channels():
     try:
