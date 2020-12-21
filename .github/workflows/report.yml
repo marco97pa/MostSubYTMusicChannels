@@ -1,10 +1,10 @@
-# This workflow updates the channels.csv file to the latest stats
+# This workflow posts a weekly report and updates the channels.csv file to the latest stats
 
-name: Check updated stats
+name: Weekly report
 
 on:
   schedule:
-   - cron: "*/5 * * * *"
+   - cron: "0 18 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
         pip install tweepy
     - name: execute py script # run the run.py to get the latest data
       run: |
-        python main.py
+        python main.py -report
       env:
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} # if run.py requires passwords..etc, set it as secrets
         TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
