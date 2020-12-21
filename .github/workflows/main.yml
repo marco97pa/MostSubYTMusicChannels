@@ -2,9 +2,7 @@
 
 name: py
 
-on:
-  schedule:
-  - cron: "26 * * * *"
+on: workflow_dispatch
 
 jobs:
   build:
