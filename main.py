@@ -42,7 +42,7 @@ def write_channels(channels):
     Args:
         channels (dict): the list of channels, each one with name, username, id and subs properties
     """
-    keys = ["name", "username", "id", "subs"]
+    keys = ["name", "username", "id", "subs","img"]
     with open("channels.csv", "w", newline='') as file:
         writer = csv.DictWriter(file, fieldnames=keys)
         writer.writeheader()
@@ -60,6 +60,7 @@ def get_subscribers(channels):
         response: a list containing the statistics about the channels provided
     """
     assert type(channels) != None, "List of channels empty or invalid"
+    print("Getting statistics from YouTube...")
     id_list = ""
     for channel in channels:
         id_list = id_list + channel["id"] + ","
@@ -80,6 +81,7 @@ def update_subscribers(response, channels):
     Returns:
         list: a list containing the channels, updated with new values
     """ 
+    print("Updating subscribers...")
     for item in response["items"]:
         for channel in channels:
             if channel["id"] == item["id"]:
@@ -163,12 +165,52 @@ def log_message(message):
     with open("message.txt", "a") as myfile:
         myfile.write(message+"\n")
 
+
+def get_images(channels):
+    """ Gets the images of one or more channels
+
+    From the list of channels provided as argument, it takes the channel id and queries YouTube to get the image of that channel(s)
+
+    Args:
+        channels (dict): the list of channels, each one with id property
+
+    Returns:
+        response: a list containing the images of the channels provided, in many sizes
+    """
+    assert type(channels) != None, "List of channels empty or invalid"
+    print("Getting images from YouTube...")
+    id_list = ""
+    for channel in channels:
+        id_list = id_list + channel["id"] + ","
+    page = requests.get("https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + id_list + "&fields=items(id%2Csnippet%2Fthumbnails)&key=" + youtube_api_key)
+    response = json.loads(page.content)
+    return response
+
+def update_images(response, channels):
+    """ Updates the images of the channels
+
+    Args:
+        channels (dict): the list of channels, each one with id and img property
+        response (response): the response provided from YouTube, containing the images of the channels above
+
+    Returns:
+        list: a list containing the channels, updated with new images
+    """ 
+    print("Updating images...")
+    for item in response["items"]:
+        for channel in channels:
+            if channel["id"] == item["id"]:
+                channel["img"] = item["snippet"]["thumbnails"]["medium"]["url"]
+    return channels
+
 # Main
 channels = load_channels()
 response = get_subscribers(channels)
 channels = update_subscribers(response, channels)
 check_if_ordered(channels)
 channels = sort_channels(channels)
+response = get_images(channels)
+channels = update_images(response, channels)
 write_channels(channels)
 
 # If the -report argument is passed on script launch, generate the report
