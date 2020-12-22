@@ -200,7 +200,9 @@ def update_images(response, channels):
     for item in response["items"]:
         for channel in channels:
             if channel["id"] == item["id"]:
-                channel["img"] = item["snippet"]["thumbnails"]["medium"]["url"]
+                if channel["img"] != item["snippet"]["thumbnails"]["medium"]["url"]:
+                    channel["img"] == item["snippet"]["thumbnails"]["medium"]["url"]
+                    log_message("Image of {} updated".format(channel["name"]))
     return channels
 
 # Main
