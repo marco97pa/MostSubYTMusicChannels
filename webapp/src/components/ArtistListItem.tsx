@@ -23,7 +23,7 @@ const ArtistListItem: React.FC<ArtistListItemProps> = ({ artist }) => {
         {i}
       </IonNote>
       <IonAvatar>
-        <img src={"https://unavatar.now.sh/twitter/" + artist.username} alt={artist.name}/>
+        <img src={artist.img} alt={artist.name}/>
       </IonAvatar>
       <IonLabel>
         <h2>

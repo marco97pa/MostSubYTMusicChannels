@@ -3,6 +3,7 @@ export interface Artist {
   username: string;
   subs: number;
   id: number;
+  img: string;
 }
 
 //Declare variables and constants
