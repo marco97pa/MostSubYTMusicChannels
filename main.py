@@ -161,8 +161,8 @@ def twitter_post(message):
     api = tweepy.API(auth)
     try:
         api.update_status(message)
-    except tweepy.error.TweepError as error:
-        print("WARNING: Tweet NOT posted because " + str(error))
+    except tweepy.TweepError as error:
+        print("WARNING: Tweet NOT posted because " + str(error.reason))
 
 def twitter_post_image(message, url, subs):
     """ Post a photo with message on Twitter (uses the Tweepy module)
