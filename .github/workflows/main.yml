@@ -17,10 +17,15 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8 # The script actually runs fine with Python 3.8 and 3.9
-    - name: pip install tweepy # Install pip and the tweepy module (needed to post on Twitter)
+    - name: install pip # Install pip
       run: |
         python -m pip install --upgrade pip
+    - name: install tweepy module # Install the tweepy module (needed to post on Twitter)
+      run: |
         pip install tweepy
+    - name: install pillow module # Install the pillow module (needed to edit images)
+      run: |
+        pip install pillow
     - name: execute py script # Run the script to fetch the latest data
       run: |
         python main.py
