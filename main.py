@@ -6,6 +6,7 @@ import json
 import datetime
 from operator import itemgetter
 import tweepy
+from PIL import Image, ImageFont, ImageDraw 
 import os
 import re
 
@@ -101,7 +102,7 @@ def subs_notify_change(channel):
     """ 
     if re.search(r"0{6}$", channel["subs"]):
         twitter_post_image("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]),
-        channel["img"])
+        channel["img"], channel["subs"][:2])
     else:
         twitter_post("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]))
     
@@ -163,7 +164,7 @@ def twitter_post(message):
     except tweepy.error.TweepError as error:
         print("WARNING: Tweet NOT posted because " + str(error))
 
-def twitter_post_image(message, url):
+def twitter_post_image(message, url, subs):
     """ Post a photo with message on Twitter (uses the Tweepy module)
     
     Args:
@@ -185,10 +186,29 @@ def twitter_post_image(message, url):
             for chunk in request:
                 image.write(chunk)
 
+        edit_image(filename, subs + " Mln")
         api.update_with_media(filename, status=message)
         os.remove(filename)
     else:
         raise Exception("ERROR: Unable to download image and make the post")
+
+def edit_image(filename, text):
+    """ Edit an image by adding a text (uses the Pillow module)
+    
+    Args:
+        filename (str): filename of the image to be modified
+        text (str): text to be added
+    """
+    #Open image
+    my_image = Image.open(filename)
+    #Open font
+    title_font = ImageFont.truetype('Montserrat-Bold.ttf', 200)
+    #Edit image
+    image_editable = ImageDraw.Draw(my_image)
+    #Add text
+    image_editable.text((50,15), text, (237, 230, 211), font=title_font)
+    #Save image
+    my_image.save(filename)
 
 def log_message(message):
     """ Appends a message in the log (the message.txt file)
