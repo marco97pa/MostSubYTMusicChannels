@@ -53,7 +53,8 @@ To build your own bot (maybe the Most subscribed YouTube Cooking channels?):
 1. Get your API Keys from [YouTube](https://developers.google.com/youtube/v3/getting-started) and [Twitter](https://developer.twitter.com/en/docs)
 2. Paste them in the **main.py** file or set them as environment variables
 3. Run `sudo pip3 install tweepy`
-4. Run **main.py** to check for new updates on the subscribers of the channels listed in channels.csv and eventually post on Twitter if there is any change.
+4. Run `sudo pip3 install pillow`
+5. Run **main.py** to check for new updates on the subscribers of the channels listed in channels.csv and eventually post on Twitter if there is any change.
    - If you run **main.py** with the **-report** flag, it will tweet a chart of the most subscribed channels
 
 ## About the web app
