@@ -118,8 +118,8 @@ def check_if_ordered(channels):
     """
     for i in range(len(channels) - 1):
         if channels[i]["subs"] < channels[i + 1]["subs"]:
-            twitter_post("{} is now the #{} most subscribed music channel on YouTube with {} Million subs, surpassing {}\n@{} #music #youtube #stats"
-            .format(channels[i+1]["name"], i+1, int(channels[i+1]["subs"])/1000000, channels[i]["name"], channels[i+1]["username"]))
+            twitter_post("{} is now the #{} most subscribed music channel on YouTube with {} Million subs, surpassing {}\n@{} {}"
+            .format(channels[i+1]["name"], i+1, int(channels[i+1]["subs"])/1000000, channels[i]["name"], channels[i+1]["username"], gen_hashtags(channels[i]["name"])))
 
 def sort_channels(channels):
     """ Orders the list of channels based on the subscribers count, from the highest to the lowest
@@ -211,6 +211,14 @@ def edit_image(filename, text):
     my_image.save(filename)
 
 def gen_hashtags(name):
+    """ Generates hashtags from a given name. It always includes "#music #youtube #stats"
+
+    Args:
+        name (string): name of the artist
+
+    Returns:
+        string: containing all the hashtags
+    """
     hashtags = "#music #youtube #stats"
     name = name.lower()
     hashtags = hashtags + " #" + name.replace(" ", "")
