@@ -101,10 +101,10 @@ def subs_notify_change(channel):
         channels (dict): a single channel
     """ 
     if re.search(r"0{6}$", channel["subs"]):
-        twitter_post_image("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]),
+        twitter_post_image("{} reached {} Million subscribers on YouTube\n@{} {}".format(channel["name"], int(channel["subs"])/1000000, channel["username"], gen_hashtags(channel["name"])),
         channel["img"], channel["subs"][:2])
     else:
-        twitter_post("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]))
+        twitter_post("{} reached {} Million subscribers on YouTube\n@{} {}".format(channel["name"], int(channel["subs"])/1000000, channel["username"], gen_hashtags(channel["name"])))
     
     log_message("{} reached {} Mln subs".format(channel["name"], int(channel["subs"])/1000000))
 
@@ -209,6 +209,15 @@ def edit_image(filename, text):
     image_editable.text((50,15), text, (237, 230, 211), font=title_font)
     #Save image
     my_image.save(filename)
+
+def gen_hashtags(name):
+    hashtags = "#music #youtube #stats"
+    name = name.lower()
+    hashtags = hashtags + " #" + name.replace(" ", "")
+    if ' ' in name:
+        for word in name.split(' '):
+            hashtags = hashtags + " #" + word
+    return hashtags
 
 def log_message(message):
     """ Appends a message in the log (the message.txt file)
