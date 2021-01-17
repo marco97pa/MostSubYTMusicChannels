@@ -101,10 +101,10 @@ def subs_notify_change(channel):
         channels (dict): a single channel
     """ 
     if re.search(r"0{6}$", channel["subs"]):
-        twitter_post_image("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]),
+        twitter_post_image("{} reached {} Million subscribers on YouTube\n@{} {}".format(channel["name"], int(channel["subs"])/1000000, channel["username"], gen_hashtags(channel["name"])),
         channel["img"], channel["subs"][:2])
     else:
-        twitter_post("{} reached {} Million subscribers on YouTube\n@{} #music #youtube #stats".format(channel["name"], int(channel["subs"])/1000000, channel["username"]))
+        twitter_post("{} reached {} Million subscribers on YouTube\n@{} {}".format(channel["name"], int(channel["subs"])/1000000, channel["username"], gen_hashtags(channel["name"])))
     
     log_message("{} reached {} Mln subs".format(channel["name"], int(channel["subs"])/1000000))
 
@@ -118,8 +118,8 @@ def check_if_ordered(channels):
     """
     for i in range(len(channels) - 1):
         if channels[i]["subs"] < channels[i + 1]["subs"]:
-            twitter_post("{} is now the #{} most subscribed music channel on YouTube with {} Million subs, surpassing {}\n@{} #music #youtube #stats"
-            .format(channels[i+1]["name"], i+1, int(channels[i+1]["subs"])/1000000, channels[i]["name"], channels[i+1]["username"]))
+            twitter_post("{} is now the #{} most subscribed music channel on YouTube with {} Million subs, surpassing {}\n@{} {}"
+            .format(channels[i+1]["name"], i+1, int(channels[i+1]["subs"])/1000000, channels[i]["name"], channels[i+1]["username"], gen_hashtags(channels[i]["name"])))
 
 def sort_channels(channels):
     """ Orders the list of channels based on the subscribers count, from the highest to the lowest
@@ -209,6 +209,23 @@ def edit_image(filename, text):
     image_editable.text((50,15), text, (237, 230, 211), font=title_font)
     #Save image
     my_image.save(filename)
+
+def gen_hashtags(name):
+    """ Generates hashtags from a given name. It always includes "#music #youtube #stats"
+
+    Args:
+        name (string): name of the artist
+
+    Returns:
+        string: containing all the hashtags
+    """
+    hashtags = "#music #youtube #stats"
+    name = name.lower()
+    hashtags = hashtags + " #" + name.replace(" ", "")
+    if ' ' in name:
+        for word in name.split(' '):
+            hashtags = hashtags + " #" + word
+    return hashtags
 
 def log_message(message):
     """ Appends a message in the log (the message.txt file)
