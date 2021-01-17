@@ -3,8 +3,8 @@
     "static/js/0.cb36bb6e.chunk.js": "/marco97pa/MostSubYTMusicChannels/static/js/0.cb36bb6e.chunk.js",
     "static/js/0.cb36bb6e.chunk.js.map": "/marco97pa/MostSubYTMusicChannels/static/js/0.cb36bb6e.chunk.js.map",
     "main.css": "/marco97pa/MostSubYTMusicChannels/static/css/main.89c9e354.chunk.css",
-    "main.js": "/marco97pa/MostSubYTMusicChannels/static/js/main.6d994e57.chunk.js",
-    "main.js.map": "/marco97pa/MostSubYTMusicChannels/static/js/main.6d994e57.chunk.js.map",
+    "main.js": "/marco97pa/MostSubYTMusicChannels/static/js/main.2ac68ec8.chunk.js",
+    "main.js.map": "/marco97pa/MostSubYTMusicChannels/static/js/main.2ac68ec8.chunk.js.map",
     "polyfills-dom.js": "/marco97pa/MostSubYTMusicChannels/static/js/polyfills-dom.269b996e.chunk.js",
     "polyfills-dom.js.map": "/marco97pa/MostSubYTMusicChannels/static/js/polyfills-dom.269b996e.chunk.js.map",
     "runtime-main.js": "/marco97pa/MostSubYTMusicChannels/static/js/runtime-main.64364c39.js",
@@ -141,7 +141,7 @@
     "static/js/68.21bf8ef4.chunk.js": "/marco97pa/MostSubYTMusicChannels/static/js/68.21bf8ef4.chunk.js",
     "static/js/68.21bf8ef4.chunk.js.map": "/marco97pa/MostSubYTMusicChannels/static/js/68.21bf8ef4.chunk.js.map",
     "index.html": "/marco97pa/MostSubYTMusicChannels/index.html",
-    "precache-manifest.506f8a7c9d7eca750cea36f4ab4583ee.js": "/marco97pa/MostSubYTMusicChannels/precache-manifest.506f8a7c9d7eca750cea36f4ab4583ee.js",
+    "precache-manifest.b6909e08f09b2aa1e7b01aead8021c84.js": "/marco97pa/MostSubYTMusicChannels/precache-manifest.b6909e08f09b2aa1e7b01aead8021c84.js",
     "service-worker.js": "/marco97pa/MostSubYTMusicChannels/service-worker.js",
     "static/css/6.3614eac3.chunk.css.map": "/marco97pa/MostSubYTMusicChannels/static/css/6.3614eac3.chunk.css.map",
     "static/css/main.89c9e354.chunk.css.map": "/marco97pa/MostSubYTMusicChannels/static/css/main.89c9e354.chunk.css.map",
@@ -158,6 +158,6 @@
     "static/css/6.3614eac3.chunk.css",
     "static/js/6.39a1ae1c.chunk.js",
     "static/css/main.89c9e354.chunk.css",
-    "static/js/main.6d994e57.chunk.js"
+    "static/js/main.2ac68ec8.chunk.js"
   ]
 }
