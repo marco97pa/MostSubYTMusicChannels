@@ -40,6 +40,18 @@ Assuming that you have Python3 and pip installed on your machine:
 
 ![Imgur](https://imgur.com/8w0X2oc.jpg)
 
+# Add a new artist
+You can request a new artist (channel) to track by:
+- Sending a direct message on Twitter
+- [Opening a new issue](https://github.com/marco97pa/MostSubYTMusicChannels/issues/new) on Github
+- Propose a change on the channels.csv file
+
+Remember that only single **music** artist channels are approved and that it should have at least half subscribers of the most subscribed channel on YouTube.
+
+*Example:*  
+As of January 2020, Justin Bieber is the first with 60 Million subscribers.  
+Only channels with at least 30 Million will be accepted.
+
 ## How it works (for developers)
 
 The script is the **main.py**.
