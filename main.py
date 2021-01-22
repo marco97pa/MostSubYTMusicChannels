@@ -4,6 +4,7 @@ import csv
 import requests
 import json
 import datetime
+from datetime import date
 from operator import itemgetter
 import tweepy
 from PIL import Image, ImageFont, ImageDraw 
@@ -278,6 +279,46 @@ def update_images(response, channels):
                     log_message("Image of {} updated".format(channel["name"]))
     return channels
 
+def retweet_from_list(channels):
+    """ Retweets tweets of a list of profiles cointaining the word "Youtube" and its variations, posted today
+
+    Args:
+        channels (list): List of channels to look for tweets
+
+    """ 
+    for channel in channels:
+        retweet_from_id(channel["username"])
+
+def retweet_from_id(userID):
+    """ Retweets tweets of a certain profile cointaining the word "Youtube" and its variations, posted today
+
+    Args:
+        userID (str): Twitter ID of the profile to look for
+
+    """ 
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+
+    tweets = api.user_timeline(screen_name=userID, 
+                            # 200 is the maximum allowed count
+                            count=3,
+                            include_rts = False,
+                            # extended mode to get full text
+                            tweet_mode = "extended"
+                            )
+
+    for tweet in tweets:
+        if "youtube" in tweet.full_text.lower():
+            if str(date.today()) in str(tweet.created_at):
+                print("Retwitting this tweet from @{}".format(userID))
+                print("ID: {}".format(tweet.id))
+                print(tweet.created_at)
+                print(tweet.full_text)
+                print("\n")
+                api.retweet(tweet.id)
+
+
 # Main
 channels = load_channels()
 response = get_subscribers(channels)
@@ -288,8 +329,12 @@ response = get_images(channels)
 channels = update_images(response, channels)
 write_channels(channels)
 
-# If the -report argument is passed on script launch, generate the report
+
 if len(sys.argv) > 1:
+    # If the -report argument is passed on script launch, generate the report
     if sys.argv[1] == "-report" or sys.argv[1] == "-r":
         report(channels)
+    # If the -retweet argument is passed on script launch, retweet posts
+    if sys.argv[1] == "-retweet":
+        retweet_from_list(channels)
 
