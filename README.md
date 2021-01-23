@@ -1,5 +1,7 @@
 ![Check updated stats](https://github.com/marco97pa/MostSubYTMusicChannels/workflows/Check%20updated%20stats/badge.svg)
-![Weekly report](https://github.com/marco97pa/MostSubYTMusicChannels/workflows/Weekly%20report/badge.svg) ![Twitter Follow](https://img.shields.io/twitter/follow/mostSubYTMusic?style=social)
+![Weekly report](https://github.com/marco97pa/MostSubYTMusicChannels/workflows/Weekly%20report/badge.svg)
+![Retweets daily](https://github.com/marco97pa/MostSubYTMusicChannels/workflows/Retweets%20daily/badge.svg)
+![Twitter Follow](https://img.shields.io/twitter/follow/mostSubYTMusic?style=social)
 
 ![icon](https://pbs.twimg.com/profile_images/1321082040842887168/ndA1-fPV_200x200.jpg)
 
@@ -16,7 +18,7 @@ It runs (almost) 24/7 thanks to *GitHub Actions*.
 
 You can [follow this bot on Twitter](https://twitter.com/mostSubYTMusic?s=09).
 
-It posts a [weekly report](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/.github/workflows/report.yml) of the top chart on Monday. Every day it [posts updates](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/.github/workflows/main.yml) such as: an [artist's subscribers increased](https://twitter.com/mostSubYTMusic/status/1340295837105217539), an [artist overtakes another artist](https://twitter.com/mostSubYTMusic/status/1339601270781308930?s=20) and more.
+It posts a [weekly report](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/.github/workflows/report.yml) of the top chart on Monday. Every day it [posts updates](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/.github/workflows/main.yml) such as: an [artist's subscribers increased](https://twitter.com/mostSubYTMusic/status/1340295837105217539), an [artist overtakes another artist](https://twitter.com/mostSubYTMusic/status/1339601270781308930?s=20), retweets tweets of artists about new videos on YouTube and more.
 
 ![Imgur](https://imgur.com/kuWkTOq.jpg)
 
