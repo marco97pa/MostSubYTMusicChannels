@@ -4,7 +4,7 @@ name: Retweets daily
 
 on:
   schedule:
-   - cron: "45 22 * * *" # Runs every day at 22:45 UTC (https://www.google.com/search?q=22%3A45+utc)
+   - cron: "30 22 * * *" # Runs every day at 22:30 UTC (https://www.google.com/search?q=22%3A30+utc)
   workflow_dispatch:
 
 jobs:
