@@ -225,7 +225,8 @@ def gen_hashtags(name):
     hashtags = hashtags + " #" + name.replace(" ", "")
     if ' ' in name:
         for word in name.split(' '):
-            hashtags = hashtags + " #" + word
+            if word.isalpha():
+                hashtags = hashtags + " #" + word
     return hashtags
 
 def log_message(message):
