@@ -1,0 +1,40 @@
+# This workflow launches unit tests against main.py to check that everything works as expected
+
+name: Unit tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo content # Checkout the repository content to GitHub runner
+      uses: actions/checkout@v2
+    - name: setup python # Install Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8 # The script actually runs fine with Python 3.8 and 3.9
+    - name: install pip # Install pip
+      run: |
+        python -m pip install --upgrade pip
+    - name: install tweepy module # Install the tweepy module (needed to post on Twitter)
+      run: |
+        pip install tweepy
+    - name: install pillow module # Install the pillow module (needed to edit images)
+      run: |
+        pip install pillow
+    - name: execute py script # Run the script to fetch the latest data
+      run: |
+        python tests.py
+      env: # API KEYs are passed as environment variables. For more info https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} 
+        TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+        TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+        TWITTER_ACCESS_KEY: ${{ secrets.TWITTER_ACCESS_KEY }}
+        TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
