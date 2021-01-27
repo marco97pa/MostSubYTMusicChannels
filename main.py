@@ -319,23 +319,23 @@ def retweet_from_id(userID):
                 print("\n")
                 api.retweet(tweet.id)
 
+if __name__ == '__main__':
+    # Main
+    channels = load_channels()
+    response = get_subscribers(channels)
+    channels = update_subscribers(response, channels)
+    check_if_ordered(channels)
+    channels = sort_channels(channels)
+    response = get_images(channels)
+    channels = update_images(response, channels)
+    write_channels(channels)
 
-# Main
-channels = load_channels()
-response = get_subscribers(channels)
-channels = update_subscribers(response, channels)
-check_if_ordered(channels)
-channels = sort_channels(channels)
-response = get_images(channels)
-channels = update_images(response, channels)
-write_channels(channels)
 
-
-if len(sys.argv) > 1:
-    # If the -report argument is passed on script launch, generate the report
-    if sys.argv[1] == "-report" or sys.argv[1] == "-r":
-        report(channels)
-    # If the -retweet argument is passed on script launch, retweet posts
-    if sys.argv[1] == "-retweet":
-        retweet_from_list(channels)
+    if len(sys.argv) > 1:
+        # If the -report argument is passed on script launch, generate the report
+        if sys.argv[1] == "-report" or sys.argv[1] == "-r":
+            report(channels)
+        # If the -retweet argument is passed on script launch, retweet posts
+        if sys.argv[1] == "-retweet":
+            retweet_from_list(channels)
 
