@@ -148,7 +148,7 @@ def report(channels):
         if len(msg) >= 280:
             msg = old_msg
             break
-    twitter_post(msg[:-1])
+    return msg[:-1]
 
 def twitter_post(message):
     """ Post a message on Twitter (uses the Tweepy module)
@@ -334,7 +334,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         # If the -report argument is passed on script launch, generate the report
         if sys.argv[1] == "-report" or sys.argv[1] == "-r":
-            report(channels)
+            twitter_post(report(channels))
         # If the -retweet argument is passed on script launch, retweet posts
         if sys.argv[1] == "-retweet":
             retweet_from_list(channels)
