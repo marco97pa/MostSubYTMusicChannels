@@ -20,6 +20,9 @@ jobs:
     - name: install pip # Install pip
       run: |
         python -m pip install --upgrade pip
+    - name: install requests module # Install the requests module
+      run: |
+        pip install requests
     - name: execute py script # Run the script to fetch the latest data
       run: |
         python main.py
