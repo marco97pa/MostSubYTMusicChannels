@@ -20,21 +20,11 @@ jobs:
     - name: install pip # Install pip
       run: |
         python -m pip install --upgrade pip
-    - name: install tweepy module # Install the tweepy module (needed to post on Twitter)
-      run: |
-        pip install tweepy
-    - name: install pillow module # Install the pillow module (needed to edit images)
-      run: |
-        pip install pillow
     - name: execute py script # Run the script to fetch the latest data
       run: |
         python main.py
       env: # API KEYs are passed as environment variables. For more info https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} 
-        TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-        TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-        TWITTER_ACCESS_KEY: ${{ secrets.TWITTER_ACCESS_KEY }}
-        TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
     - name: Commit changes # Commit changes to the master branch (if the message.txt file is not empty)
       run: |
         git config --global user.name 'marco97pa'

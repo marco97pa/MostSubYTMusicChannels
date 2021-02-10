@@ -7,24 +7,16 @@
 
 # Most Subscribed YouTube Music Channels
 
-This **Python** bot checks the most subscribed music artist channels on YouTube, makes a top chart and shares updates about it on Twitter. 
+This **Python** bot checks the most subscribed music artist channels on YouTube and makes a top chart.
 
 It runs (almost) 24/7 thanks to *GitHub Actions*.
 
 
 ## How to see the charts
 
-### Twitter
-
-You can [follow this bot on Twitter](https://twitter.com/mostSubYTMusic?s=09).
-
-It posts a [weekly report](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/.github/workflows/report.yml) of the top chart on Monday. Every day it [posts updates](https://github.com/marco97pa/MostSubYTMusicChannels/blob/master/.github/workflows/main.yml) such as: an [artist's subscribers increased](https://twitter.com/mostSubYTMusic/status/1340295837105217539), an [artist overtakes another artist](https://twitter.com/mostSubYTMusic/status/1339601270781308930?s=20), retweets tweets of artists about new videos on YouTube and more.
-
-![Imgur](https://imgur.com/kuWkTOq.jpg)
-
 ### Web App
 
-You can also see the charts on the [web app](https://marco97pa.github.io/MostSubYTMusicChannels/) in a nice Material UI.
+You see the charts on the [web app](https://marco97pa.github.io/MostSubYTMusicChannels/) in a nice Material UI.
 
 The website can be "installed" as Web App on Android, iOS and Windows 10.
 
@@ -62,14 +54,11 @@ Data is stored in [channels.csv](https://github.com/marco97pa/MostSubYTMusicChan
 
 
 ## Build your own
-To build your own bot (maybe the Most subscribed YouTube Cooking channels?):
+To build your own (maybe the Most subscribed YouTube Cooking channels?):
 0. Clone this repository
-1. Get your API Keys from [YouTube](https://developers.google.com/youtube/v3/getting-started) and [Twitter](https://developer.twitter.com/en/docs)
+1. Get your API Keys from [YouTube](https://developers.google.com/youtube/v3/getting-started)
 2. Paste them in the **main.py** file or set them as environment variables
-3. Run `sudo pip3 install tweepy`
-4. Run `sudo pip3 install pillow`
-5. Run **main.py** to check for new updates on the subscribers of the channels listed in channels.csv and eventually post on Twitter if there is any change.
-   - If you run **main.py** with the **-report** flag, it will tweet a chart of the most subscribed channels
+3. Run **main.py** to check for new updates on the subscribers of the channels listed in channels.csv 
 
 ## About the web app
 The web app is written in React using the [Ionic5](https://ionicframework.com/) framework.
