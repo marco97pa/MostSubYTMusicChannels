@@ -105,8 +105,8 @@ def check_if_ordered(channels):
     """
     for i in range(len(channels) - 1):
         if channels[i]["subs"] < channels[i + 1]["subs"]:
-            log_message("{} is now the #{} most subscribed music channel on YouTube with {} Million subs, surpassing {}\n@{} {}"
-            .format(channels[i+1]["name"], i+1, int(channels[i+1]["subs"])/1000000, channels[i]["name"], channels[i+1]["username"], gen_hashtags(channels[i]["name"])))
+            log_message("{} is now the #{} most subscribed music channel on YouTube with {} Million subs, surpassing {}\n@{}"
+            .format(channels[i+1]["name"], i+1, int(channels[i+1]["subs"])/1000000, channels[i]["name"], channels[i+1]["username"]))
 
 def sort_channels(channels):
     """ Orders the list of channels based on the subscribers count, from the highest to the lowest
