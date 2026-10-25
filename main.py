@@ -117,7 +117,7 @@ def sort_channels(channels):
     Returns:
         list: a list containing the channels sorted
     """
-    return sorted(channels, key=itemgetter('subs'), reverse=True)
+    return sorted(channels, key=lambda channel: int(channel["subs"]), reverse=True)
 
 def log_message(message):
     """ Appends a message in the log (the message.txt file)
